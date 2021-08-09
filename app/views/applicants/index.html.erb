@@ -31,8 +31,11 @@
       <% end %>
     </div>
 
-<% if !@candidates.nil? %>
+<% unless @candidates.nil? %>
   <table class="table table-striped" id="candidate-details">
+   <%if @candidates.empty? %>
+    <h2 class="text-center">No Data Found</h2>
+  <% else %>
     <thead>
       <tr>
         <th scope="col">Name</th>
@@ -41,15 +44,14 @@
       </tr>
     </thead>
     <tbody>
-    <%@candidates.each do|candidate|%>
-      <tr>
-        <td scope="row"><%=candidate.name%></td>
-        <td style="word-break:break-all;width:53%"><%=candidate.email%></td>
-        <td><%=candidate.eligible? ? "Eligible": "Not Eligible"%></td>
-      </tr>
+          <% @candidates.each do|candidate|%>
+            <tr>
+              <td scope="row"><%=candidate.name%></td>
+              <td style="word-break:break-all;width:53%"><%=candidate.email%></td>
+              <td><%=candidate.eligible? ? "Eligible": "Not Eligible"%></td>
+            </tr>
+          <% end %>
       <% end %>
     </tbody>
 </table>
-<% elsif @candidates.nil? %>
-
 <% end %>
