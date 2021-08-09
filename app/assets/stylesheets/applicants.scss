@@ -1,3 +1,5 @@
+
+
 .navbar > .container, .navbar > .container-fluid, .navbar > .container-sm, .navbar > .container-md, .navbar > .container-lg, .navbar > .container-xl, .navbar > .container-xxl {
   display: flex;
     flex-wrap: inherit;
@@ -15,6 +17,7 @@
 #alert{
   max-width: 700px;
   margin: 0 auto;
+  margin-top: 10px;
 }
 #info-fill{
   width: 3%;
