@@ -12,9 +12,12 @@
   text-align:center;
   box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
 }
-#announcement{
-  font-size: 20px;
-  padding-top:20px ;
+#alert{
+  max-width: 700px;
+  margin: 0 auto;
+}
+#info-fill{
+  width: 3%;
 }
 .form-container {
   // min-height: 100vh;

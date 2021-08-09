@@ -3,8 +3,7 @@ class ApplicantsController < ApplicationController
 
   end
   def show
-    @candidate = Applicant.find_by(email:params[:email])
-    puts '+++++++++++++++++++++++++++#{@candidate} ++++++++++++++++++++++++'
+    @candidates = Applicant.where(email:params[:email])
     render :index
   end
 end
