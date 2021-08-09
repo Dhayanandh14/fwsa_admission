@@ -1,0 +1,40 @@
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Freshworks Software Academy</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <%= form_with(url: "applicant", method: "get" ,class:"d-flex") do %>
+          <%= email_field_tag "email",nil, placeholder: "Enter your email...",
+                            class:"form-control me-2",
+                            autofocus: true,
+                            required: true
+                            %>
+          <%= submit_tag "Search", class:"btn btn-outline-success"%>
+        <% end %>
+    </div>
+  </div>
+</nav>
+
+<%unless @candidate.nil? %>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Eligibilty</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td scope="row"><%=@candidate.name%></td>
+        <td><%=@candidate.email%></td>
+        <td><%=@candidate.eligible? ? "Eligible": "Not Eligible"%></td>
+      </tr>
+    </tbody>
+</table>
+
+<% end %>
