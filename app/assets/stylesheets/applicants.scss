@@ -24,6 +24,12 @@
   position: relative;
   top: -1px;
 }
+#eligible{
+  color: #009451;
+}
+#not-eligible{
+  color: red;
+}
 .form-container {
   // min-height: 100vh;
   display: -ms-flexbox;
