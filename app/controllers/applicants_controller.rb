@@ -3,7 +3,8 @@ class ApplicantsController < ApplicationController
 
   end
   def show
-    @candidates = Applicant.where(email:params[:email])
+    email=params[:email].downcase
+    @candidates = Applicant.where(email: email)
     render :index
   end
 end
