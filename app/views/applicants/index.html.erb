@@ -1,18 +1,13 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid text-center">
-    <a class="navbar-brand text-center" href="/"><img style="width: 40px;" src="logo.png">Freshworks Software Academy</a>
+    <a class="navbar-brand text-center" href="/"><img style="width: 29px;
+    position: relative;
+    left: -6px;
+    top: -3px;" src="logo-2.png">Freshworks Software Academy</a>
   </div>
 </nav>
 
-<% unless @candidates.nil? %>
-  <%unless @candidates.empty? %>
-    <div class="alert alert-primary text-center"  id="alert" role="alert">
-  <img id="info-icon" src="https://img.icons8.com/color/48/000000/info--v1.png"/>
-    Exam will be conducted on August 14
-  </div>
-  <% end %>
-<% end %>
 
 
 <div class="form-container">
@@ -38,6 +33,17 @@
    <%if @candidates.empty? %>
     <h2 class="text-center">Please enter the correct email address</h2>
    <% else %>
+   <%eligible =false %>
+  <% @candidates.each do|candidate|%>
+    <% if candidate.eligible? && !eligible%>
+      <%eligible=true%>
+      <div class="alert alert-primary text-center"  id="alert" role="alert">
+        Thank you for your interest in Freshworks Software Academy. we will have an online entrance examination <strong>(FSAT)</strong> on <strong>14 Aug, 2021</strong>. You will be able begin and complete the examination within 1 hour, anytime between 10 am- 5 pm IST on the day of the examination. <%= link_to  "Read More", details_path %>
+      </div>
+    <%break %>
+   <% end %>
+  <% end %>
+
     <thead>
       <tr>
         <th scope="col">Name</th>

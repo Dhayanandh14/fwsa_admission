@@ -18,11 +18,16 @@
   max-width: 700px;
   margin: 0 auto;
   margin-top: 10px;
+  margin-bottom: 36px;
 }
 #info-icon{
   width: 25px;
   position: relative;
   top: -1px;
+}
+#details{
+  border-top: 1px solid black;
+  width: 17%;
 }
 #eligible{
   color: #009451;
