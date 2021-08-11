@@ -6,7 +6,12 @@
     align-items: center;
     justify-content: space-around;
 }
-
+::placeholder{
+  opacity: 0.6;
+}
+#form-container{
+  padding-top: 46px;
+}
 #candidate-details{
   background-color: #f8f9fa;
   max-width: 700px;
@@ -20,11 +25,27 @@
   margin-top: 10px;
   margin-bottom: 36px;
 }
-#info-icon{
-  width: 25px;
-  position: relative;
-  top: -1px;
+#not-found-error{
+  max-width: 749px;
+  margin: 0px auto;
+  justify-content: space-around;
+  animation-name: myfirst;
+  animation-duration: .5s;
+  animation-iteration-count: 1;
 }
+@keyframes myfirst {
+  0%   { left:0px; opacity: 0;}
+  25%  { left:0px; opacity: 0.1;}
+  35%  { left:0px; opacity: 0.2;}
+  45%  { left:0px; opacity: 0.3;}
+  55%  {left:0px; top:0px;opacity: 0.4;}
+  65%  { left:0px; top:0px;opacity: 0.5;}
+  75%  { left:0px; top:0px;opacity: 0.6;}
+  85%  { left:0px; top:0px;opacity: 0.7;}
+  95%  { left:0px; top:0px;opacity: 0.8;}
+  100%  { left:0px; top:0px;opacity: 1;}
+}
+
 #details{
   border-top: 1px solid black;
   width: 17%;
