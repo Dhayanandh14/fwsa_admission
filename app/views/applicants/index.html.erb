@@ -4,7 +4,7 @@
     <a class="navbar-brand text-center" href="/"><img style="width: 29px;
     position: relative;
     left: -6px;
-    top: -3px;" src="logo-2.png">Freshworks Software Academy</a>
+    top: -3px;" src="logo-2.png"><strong>Freshworks Software Academy</strong></a>
   </div>
 </nav>
 
@@ -38,7 +38,9 @@
     <% if candidate.eligible? && !eligible%>
       <%eligible=true%>
       <div class="alert alert-primary text-center"  id="alert" role="alert">
-        Thank you for your interest in Freshworks Software Academy. we will have an online entrance examination <strong>(FSAT)</strong> on <strong>14 Aug, 2021</strong>. You will be able begin and complete the examination within 1 hour, anytime between 10 am- 5 pm IST on the day of the examination. <%= link_to  "Read More", details_path %>
+      [IMPORTANT] Coming up! FSAT (Online Entrance Exam) : 11am-12 pm IST, 14 August 2021.
+Please check your registered email (spam/promotions folder as well) for updates from us.
+        <%= link_to  "Read More", details_path %>
       </div>
     <%break %>
    <% end %>
