@@ -10,16 +10,12 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body style="">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid text-center">
-          <a class="navbar-brand text-center" href="/"><img style="width: 29px;
-          position: relative;
-          left: -9px;
-          top: -4px;" src="logo-2.png"><strong id="company-name">Freshworks Software Academy</strong></a>
-        </div>
-    </nav>
+  <body style="height:100vh">
+
 
     <%= yield %>
+    <footer>
+      <img id="footer-image" src="pattern.svg">
+    </footer>
   </body>
 </html>
