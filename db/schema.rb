@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2021_08_09_091249) do
     t.string "name", null: false
     t.string "email", null: false
     t.date "dob", null: false
+    t.index ["name", "email"], name: "index_applicant_on_name_and_email", unique: true
   end
 
 end
