@@ -76,7 +76,12 @@ Please check your registered email (spam/promotions folder as well) for updates 
               <strong id="not-eligible">Not Eligible</strong>
             <% end %>
            </td>
+           <%if candidate.eligible?  %>
            <td><a href="https://fsat.fwsa.freshworks.com/Authenticate?id=0c8899661d"><strong>Exam Link</strong></a></td>
+          <% else %>
+            <td>---</td>
+           <% end %>
+
         </tr>
       <% end %>
     <% end %>
@@ -87,7 +92,7 @@ Please check your registered email (spam/promotions folder as well) for updates 
    <% @candidates.each do|candidate|%>
     <% if candidate.eligible?%>
         <div class="text-center" id="fsat-video">
-          <iframe width="550" height="300" src="https://www.youtube.com/embed/7l0EZPXeKdQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+         <iframe width="550" height="300" src="https://www.youtube.com/embed/PTTvqXzsN8A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
       <%break%>
    <% end %>

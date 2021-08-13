@@ -9,13 +9,23 @@
     font-size: 18px;
     color: #0b1320;
   }
+  body{
+    width: 113vw !important;
+  }
 
   #footer-image {
     width: 0% !important;
   }
-  #form-container{
-    display: flex;
-    align-items: center;
+  #candidate-details{
+    width: 50% !important;
+  }
+  iframe{
+    width: 100%;
+    // margin: 0px 0px 0px 75px;
+  }
+  #alert{
+    width: 100%;
+    padding-left: 36px;
   }
   #main-content {
     position: relative;
