@@ -13,7 +13,10 @@
   #footer-image {
     width: 0% !important;
   }
-
+  #form-container{
+    display: flex;
+    align-items: center;
+  }
   #main-content {
     position: relative;
     top: 100px;

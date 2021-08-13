@@ -82,8 +82,16 @@ Please check your registered email (spam/promotions folder as well) for updates 
     <% end %>
     </tbody>
   </table>
-  <div class="text-center" id="fsat-video"><iframe width="550" height="300" src="https://www.youtube.com/embed/7l0EZPXeKdQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  </div>
+
+
+   <% @candidates.each do|candidate|%>
+    <% if candidate.eligible?%>
+        <div class="text-center" id="fsat-video">
+          <iframe width="550" height="300" src="https://www.youtube.com/embed/7l0EZPXeKdQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      <%break%>
+   <% end %>
+  <% end %>
 <% end %>
 </div>
 </div>
