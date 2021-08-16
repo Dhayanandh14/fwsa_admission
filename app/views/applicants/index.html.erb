@@ -48,9 +48,9 @@
     <% if candidate.eligible? && !eligible%>
       <%eligible=true%>
       <div class="alert alert-primary text-center"  id="alert" role="alert">
-      <strong>[IMPORTANT] Coming up! FSAT (Online Entrance Exam) :</strong> 11am-12 pm IST, 14 August 2021.
-Please check your registered email (spam/promotions folder as well) for updates from us.
-        <%= link_to  "Read More", details_path %>
+      <strong>[IMPORTANT] FSAT (Online Entrance Exam) Results: Coming Soon!</strong>
+      Please check your registered email (spam/promotions folder as well) for updates from us.
+        <%# <%= link_to  "Read More", details_path %>
       </div>
     <%break %>
    <% end %>
@@ -61,7 +61,7 @@ Please check your registered email (spam/promotions folder as well) for updates 
         <th scope="col">Name</th>
         <th scope="col">Email</th>
         <th scope="col"> FSAT Eligibility</th>
-        <th scope="col">FSAT Link</th>
+        <%# <th scope="col">FSAT Link</th> %>
       </tr>
     </thead>
     <tbody>
@@ -76,12 +76,11 @@ Please check your registered email (spam/promotions folder as well) for updates 
               <strong id="not-eligible">Not Eligible</strong>
             <% end %>
            </td>
-           <%if candidate.eligible?  %>
+           <!--<%if candidate.eligible?  %>
            <td><a href="https://fsat.fwsa.freshworks.com/Authenticate?id=0c8899661d"><strong>Exam Link</strong></a></td>
           <% else %>
             <td>---</td>
-           <% end %>
-
+           <% end %>-->
         </tr>
       <% end %>
     <% end %>
@@ -89,14 +88,14 @@ Please check your registered email (spam/promotions folder as well) for updates 
   </table>
 
 
-   <% @candidates.each do|candidate|%>
+  <!-- <% @candidates.each do|candidate|%>
     <% if candidate.eligible?%>
         <div class="text-center" id="fsat-video">
          <iframe width="550" height="300" src="https://www.youtube.com/embed/PTTvqXzsN8A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
       <%break%>
    <% end %>
-  <% end %>
+  <% end %>-->
 <% end %>
 </div>
 </div>
