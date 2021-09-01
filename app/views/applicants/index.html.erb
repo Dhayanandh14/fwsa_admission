@@ -39,17 +39,17 @@
 </div>
    <% else %>
    <%eligible =false %></div>
-  <!--<% @candidates.each do|candidate|%>
+  <% @candidates.each do|candidate|%>
     <% if candidate.eligible? && !eligible%>
       <%eligible=true%>
       <div class="alert alert-primary text-center"  id="alert" role="alert">
-      <strong>[IMPORTANT] FSAT (Online Entrance Exam) Results: Coming Soon!</strong>
+      <strong>[IMPORTANT] FSAT (Online Entrance Exam) Results-Announced</strong>
       Please check your registered email (spam/promotions folder as well) for updates from us.
         <%# <%= link_to  "Read More", details_path %>
       </div>
     <%break %>
    <% end %>
-  <% end %>-->
+  <% end %>
 
     <thead>
       <tr>
@@ -77,8 +77,8 @@
           <% else %>
             <td>---</td>
            <% end %>-->
-           <td><% if candidate.status == 'Selected'%>
-              <strong id="eligible">Selected</strong>
+           <td><% if candidate.status == 'Selected for Final Round'%>
+              <strong id="eligible">Selected for Final Round</strong>
             <%else%>
               <strong id="not-eligible">Not Selected</strong>
            <% end %>

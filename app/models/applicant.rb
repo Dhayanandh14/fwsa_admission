@@ -4,7 +4,7 @@ class Applicant < ApplicationRecord
   end
 
   def self.create_bundle_data student
-    Applicant.where("email= ?", student).update_all(status: "Selected")
+    Applicant.where("email= ?", student).update_all(status: "Selected for Final Round")
     Applicant.where("status is ?",nil).update_all(status: "Not Selected")
   end
 end
