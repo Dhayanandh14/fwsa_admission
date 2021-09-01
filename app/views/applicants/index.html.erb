@@ -2,12 +2,7 @@
 
 
 <div class="container" id="main-container">
-
-
-
-
-
-  <div id="main-content">
+<div id="main-content">
     <div class=" text-center align-middle">
       <a class="navbar-brand text-center" href="/"><img style="width: 29px;
       position: relative;
@@ -61,6 +56,7 @@
         <th scope="col">Name</th>
         <th scope="col">Email</th>
         <th scope="col"> FSAT Eligibility</th>
+        <th scope="col"> FSAT Status</th>
         <%# <th scope="col">FSAT Link</th> %>
       </tr>
     </thead>
@@ -81,6 +77,14 @@
           <% else %>
             <td>---</td>
            <% end %>-->
+           <td><% if candidate.status == 'Selected'%>
+              <strong id="eligible">Selected</strong>
+            <%else%>
+              <strong id="not-eligible">Not Selected</strong>
+           <% end %>
+
+
+           </td>
         </tr>
       <% end %>
     <% end %>

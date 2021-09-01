@@ -9,9 +9,9 @@ development:
   password: changeme
   database: academy_db
 
-test:
-  <<: *default
-  database: test_academy_db
-production:
-  <<: *default
-  database: prod_academy_db
+# test:
+#   <<: *default
+#   database: test_academy_db
+# production:
+#   <<: *default
+#   database: prod_academy_db
