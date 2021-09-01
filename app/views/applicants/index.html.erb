@@ -55,7 +55,7 @@
       <tr>
         <th scope="col">Name</th>
         <th scope="col">Email</th>
-        <th scope="col"> FSAT Eligibility</th>
+        <!--<th scope="col"> FSAT Eligibility</th>-->
         <th scope="col"> FSAT Status</th>
         <%# <th scope="col">FSAT Link</th> %>
       </tr>
@@ -65,13 +65,13 @@
         <tr>
           <td scope="row"><%=candidate.name%></td>
           <td style="word-break:break-all;"><%=candidate.email%></td>
-          <td>
+          <!--<td>
             <% if candidate.eligible?%>
               <strong id="eligible">Eligible</strong>
             <%else%>
               <strong id="not-eligible">Not Eligible</strong>
             <% end %>
-           </td>
+           </td>-->
            <!--<%if candidate.eligible?  %>
            <td><a href="https://fsat.fwsa.freshworks.com/Authenticate?id=0c8899661d"><strong>Exam Link</strong></a></td>
           <% else %>
