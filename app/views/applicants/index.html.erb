@@ -1,5 +1,26 @@
 
 
+<% selected_people = false %>
+<% selection_status = false  %>
+ <%eligible =false %>
+
+<% unless @candidates.nil? %>
+ <% @candidates.each do|candidate|%>
+
+  <% if candidate.selection_status %>
+    <% selection_status = true%>
+
+  <% end %>
+   <% if candidate.eligible? && !eligible%>
+      <%eligible=true%>
+  <% end %>
+  <%break %>
+
+ <% end %>
+
+<% end %>
+
+
 
 <div class="container" id="main-container">
 <div id="main-content">
@@ -38,17 +59,12 @@
   </div>
 </div>
    <% else %>
-   <%eligible =false %></div>
-  <% @candidates.each do|candidate|%>
-    <% if candidate.eligible? && !eligible%>
-      <%eligible=true%>
+      <% if eligible %>
       <div class="alert alert-primary text-center"  id="alert" role="alert">
       <strong>[IMPORTANT] FSAT (Online Entrance Exam) Results-Announced</strong>
       Please check your registered email (spam/promotions folder as well) for updates from us.
         <%# <%= link_to  "Read More", details_path %>
       </div>
-    <%break %>
-   <% end %>
   <% end %>
 
     <thead>
@@ -56,12 +72,19 @@
         <th scope="col">Name</th>
         <th scope="col">Email</th>
         <!--<th scope="col"> FSAT Eligibility</th>-->
+        <% if !selection_status %>
         <th scope="col"> FSAT Status</th>
+        <% else selection_status %>
+        <th>Final Result</th>
+
+        <% end %>
+
         <%# <th scope="col">FSAT Link</th> %>
       </tr>
     </thead>
     <tbody>
       <% @candidates.each do|candidate|%>
+
         <tr>
           <td scope="row"><%=candidate.name%></td>
           <td style="word-break:break-all;"><%=candidate.email%></td>
@@ -77,14 +100,27 @@
           <% else %>
             <td>---</td>
            <% end %>-->
-           <td><% if candidate.status == 'Selected for Final Round'%>
-              <strong id="eligible">Selected for Final Round</strong>
-            <%else%>
-              <strong id="not-eligible">Not Selected</strong>
+           <% if !selection_status %>
+            <td><% if candidate.status == 'Selected for Final Round'%>
+                <strong id="eligible">Selected for Final Round</strong>
+                <%selected_people = true %>
+              <%else%>
+                <strong id="not-eligible">Not Selected</strong>
+            <% end %>
+           </td>
+           <% end %>
+           <% if selection_status %>
+            <td>
+                <% if candidate.selection_status == "Selected" %>
+                    <strong style="color:green" > <%= candidate.selection_status%> </strong>
+                <% elsif candidate.selection_status == "Rejected" %>
+                     <strong style="color:red" > <%= candidate.selection_status%> </strong>
+                <% elsif candidate.selection_status == "Waitlisted" %>
+                     <strong style="color: #e4ab00;" > <%= candidate.selection_status%> </strong>
+                <% end %>
+            </td>
            <% end %>
 
-
-           </td>
         </tr>
       <% end %>
     <% end %>
@@ -92,6 +128,15 @@
   </table>
 
 
+<!--  <% if selected_people == true %>
+       <strong style="text-align:center;max-width: 600px;
+    margin: 49px auto;" class="d-flex align-items-center text-center"  id="eligible">Congratulations! You have been selected for the Final Round. Our team will get in touch with you shortly.</strong>
+   <% elsif selected_people == false %>
+      <strong style="text-align:center;max-width: 600px;
+    margin: 49px auto;" class="d-flex align-items-center text-center" id="not-eligible">Sorry, you did not make to the Final Round. Thanks for taking the FSAT & wish you all the best for your future.</strong>
+  <% end %>
+
+-->
   <!-- <% @candidates.each do|candidate|%>
     <% if candidate.eligible?%>
         <div class="text-center" id="fsat-video">

@@ -1,13 +1,26 @@
 require "csv"
-results ="batch2_students_results.csv"
+results ="batch2_selection_status.csv"
 # results.each do |result|
-  student_results = CSV.parse(File.read(results), encoding: "UTF-8")
+  student_results = CSV.parse(File.read(results), encoding: "UTF-8", headers: true)
   student_results.each do |student|
-    puts student
-    if student
-        Applicant.create_bundle_data(student)
-      end
+    puts student["selection_status"]
+    if student["email"] && student["selection_status"]
+        Applicant.create_bundle_data(student["email"],student["selection_status"])
+    end
    end
+
+
+# #fsat selecton
+# require "csv"
+# results ="batch2_students_results.csv"
+# # results.each do |result|
+#   student_results = CSV.parse(File.read(results), encoding: "UTF-8")
+#   student_results.each do |student|
+#     puts student
+#     if student
+#         Applicant.create_bundle_data(student)
+#       end
+#    end
 
 
 

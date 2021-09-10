@@ -3,13 +3,27 @@ class Applicant < ApplicationRecord
     dob.year.to_i >= 2000 && dob.year.to_i <= 2004
   end
 
-  def self.create_bundle_data student
-    Applicant.where("email= ?", student).update_all(status: "Selected for Final Round")
-    Applicant.where("status is ?",nil).update_all(status: "Not Selected")
+#selection_status
+  def self.create_bundle_data email,selection_status
+    Applicant.where("email= ?", email).update_all(selection_status: selection_status)
+    # Applicant.where("status is ?",nil).update_all(status: "Not Selected")
   end
 end
 
 
+
+#update the fsat status
+#   def self.create_bundle_data student
+#     Applicant.where("email= ?", student).update_all(status: "Selected for Final Round")
+#     Applicant.where("status is ?",nil).update_all(status: "Not Selected")
+#   end
+# end
+
+
+
+
+
+#create
 
 # def self.create_bundle_data name,email,dob
 #   applicant = Applicant.where("name = ? and email = ?", name.strip, email.strip.downcase)

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_30_151948) do
+ActiveRecord::Schema.define(version: 2021_09_09_142633) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2021_08_30_151948) do
     t.string "email", null: false
     t.date "dob", null: false
     t.string "status"
+    t.string "selection_status"
     t.index ["name", "email"], name: "index_applicant_on_name_and_email", unique: true
   end
 
